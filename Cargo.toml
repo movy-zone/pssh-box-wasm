@@ -1,0 +1,44 @@
+[package]
+name = "pssh-box-wasm"
+version = "0.1.7"
+authors = ["Eric Marsden <eric.marsden@risk-engineering.org>"]
+description = "Parsing and printing PSSH boxes, in WebAssembly."
+repository = "https://github.com/emarsden/pssh-box-wasm/"
+license = "MIT"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+pssh-box = "0.1.10"
+serde = { version = "1.0.217", features = ["derive"] }
+serde_json = "1.0.135"
+url = "2.5.4"
+hex = "0.4.3"
+wasm-bindgen = { version = "0.2.99" }
+serde-wasm-bindgen = "0.6.5"
+wasm-bindgen-futures = "0.4.49"
+log = "0.4.22"
+wasm-log = "0.3.1"
+js-sys = "0.3.76"
+console_error_panic_hook = "0.1.7"
+html-escape = "0.2.13"
+thiserror = "2.0.11"
+
+[dependencies.web-sys]
+version = "0.3.76"
+features = [
+  'console',
+  'Headers',
+  'Request',
+  'RequestInit',
+  'Response',
+  'Window',
+]
+
+
+[profile.release]
+opt-level = 's'  # optimize for size
+lto = true
+codegen-units = 1
