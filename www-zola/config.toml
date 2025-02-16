@@ -1,4 +1,4 @@
-base_url = "https://emarsden.github.io/pssh-box-wasm/"
+base_url = "https://movy-zone.github.io/pssh-box-wasm/"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
